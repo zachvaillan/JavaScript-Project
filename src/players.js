@@ -4,7 +4,7 @@ const TEAMS = [
     "red",
     "green",
     "blue",
-    "yellow",
+    "gray",
 ]
 
 class Players {

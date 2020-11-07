@@ -3,10 +3,16 @@ class Tile {
     constructor(pos){
         this.pos = pos;
         this.status = false;
+        this.deadSpace = false;
 
         this.owner = null;
         this.units = 0;
         this.color = null;
+
+        this.bridge = false;
+        this.battleGrounds = false;
+        this.hideAway = false;
+        this.theBelt = false;
 
         this.tileElement = document.createElement('div');
         this.tileElement.classList.add('tile');
@@ -24,8 +30,12 @@ class Tile {
         this.tileElement.classList.add(team);
     }
 
+    loseTile(team){
+        this.tileElement.classList.remove(team);
+    }
+
     claimable(){
-        if (!this.status) {
+        if (!this.status && this.deadSpace === false) {
             this.tileElement.classList.add('clickable')
         } else {
             this.tileElement.classList.remove('clickable');
@@ -44,11 +54,14 @@ class Tile {
 
     removeUnits(count = 1){
         this.units -= count;
+        if (this.units === 0){
+            this.units = null;
+        }
         this.unitsElement.innerHTML = this.units;
     }
 
     isValidPos(pos){
-        if ((pos[0] >= 0 && pos[0] < 4) && (pos[1] >= 0 && pos[1] < 4)){
+        if ((pos[0] >= 0 && pos[0] < 4) && (pos[1] >= 0 && pos[1] < 8)){
             return true;
         } else {
             return false;
