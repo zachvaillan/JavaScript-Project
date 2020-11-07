@@ -382,19 +382,34 @@ class Game {
         let infoContainer = document.createElement("div");
         infoContainer.classList.add("info-container");
 
-        let title = document.createElement("div");
-        title.classList.add("title");
-        title.innerHTML = "S T A R Q U E S T";
-        infoContainer.appendChild(title);
+        let lineStrike = document.createElement("div");
+        lineStrike.classList.add("line-strike");
+        infoContainer.appendChild(lineStrike);
 
         let name = document.createElement("div");
         name.classList.add("name");
-        name.innerHTML = "By Zachary Vaillancourt";
+        name.innerHTML = "Zach Vaillancourt";
         let nameContainer = document.createElement("div");
         nameContainer.classList.add("name-container");
         nameContainer.appendChild(name);
 
         infoContainer.appendChild(nameContainer);
+
+        infoContainer.appendChild(this.createTitle());
+
+        let github = document.createElement("div");
+        github.classList.add("github");
+        github.innerHTML = "Github";
+        let linkedIn = document.createElement("div");
+        linkedIn.classList.add("linked-in");
+        linkedIn.innerHTML = "LinkedIn";
+
+        let linksContainer = document.createElement("div");
+        linksContainer.classList.add("links-container");
+        linksContainer.appendChild(github);
+        linksContainer.appendChild(linkedIn);
+
+        infoContainer.appendChild(linksContainer);
 
         mapAndInfoContainer.appendChild(this.mapGrid.mapElement);
         mapAndInfoContainer.appendChild(infoContainer);
@@ -405,20 +420,20 @@ class Game {
     renderPlayerImg(){
         if (this.currentPlayer.team === "red"){
             this.turnImage.src = "../assets/8.png";
-            this.turnImageContainer.style.backgroundColor = "rgba(255, 0, 0, 0.3)";
-            this.turn1.style.backgroundColor = "rgba(255, 0, 0, 0.3)";
+            this.turnImageContainer.style.background = "linear-gradient(black, rgba(255, 0, 0, 0.6))";
+            this.turn1.style.background = "linear-gradient(rgba(255, 0, 0, 0.3), black)";
         } else if (this.currentPlayer.team === "blue"){
             this.turnImage.src = "../assets/4.png";
-            this.turnImageContainer.style.backgroundColor = "rgba(0, 0, 255, 0.3)";
-            this.turn1.style.backgroundColor = "rgba(0, 0, 255, 0.3)";
+            this.turnImageContainer.style.background = "linear-gradient(black, rgba(0, 0, 255, 0.6))";
+            this.turn1.style.background = "linear-gradient(rgba(0, 0, 255, 0.3), black";
         } else if (this.currentPlayer.team === "gray"){
             this.turnImage.src = "../assets/19.png";
-            this.turnImageContainer.style.backgroundColor = "rgba(128, 128, 128, 0.3)";
-            this.turn1.style.backgroundColor = "rgba(128, 128, 128, 0.3)";
+            this.turnImageContainer.style.background = "linear-gradient(black, rgba(128, 128, 128, 0.6))";
+            this.turn1.style.background = "linear-gradient(rgba(128, 128, 128, 0.3), black)";
         } else if (this.currentPlayer.team === "green"){
             this.turnImage.src = "../assets/15.png";
-            this.turnImageContainer.style.backgroundColor = "rgba(0, 128, 0, 0.3)";
-            this.turn1.style.backgroundColor = "rgba(0, 128, 0, 0.3)";
+            this.turnImageContainer.style.background = "linear-gradient(black, rgba(0, 128, 0, 0.6))";
+            this.turn1.style.background = "linear-gradient(rgba(0, 128, 0, 0.3), black)";
         }
     }
 
@@ -482,6 +497,21 @@ class Game {
             this.nextPlayer();
         }
         this.updateInfoDisplay();
+    }
+
+    createTitle(){
+        let titleContainer = document.createElement("div");
+        titleContainer.classList.add("title-container");        
+
+        let wholeTitle = ("STARQUEST").split("");
+
+        wholeTitle.forEach( (char, i) => {
+            let titleChar = document.createElement("div");
+            titleChar.classList.add(`title-char${i}`);
+            titleChar.innerHTML = char;
+            titleContainer.appendChild(titleChar);
+        });
+        return titleContainer;
     }
 
 }
