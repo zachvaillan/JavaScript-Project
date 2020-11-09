@@ -108,26 +108,26 @@ body{
     box-sizing: border-box;
     display: flex;
     justify-content: center;
-    background: linear-gradient(rgba(253, 235, 69, 0.698), black);
+    background: radial-gradient(rgba(253, 235, 69, 0.698), black);
     border-radius: 40px;
     margin: 30px;
-    opacity: .9;
+    opacity: .8;
 }
 
 .red{
-    background: linear-gradient(red, black);
+    background: radial-gradient(red, black);
 }
 
 .green{
-    background: linear-gradient(green, black);
+    background: radial-gradient(green, black);
 }
 
 .blue{
-    background: linear-gradient(blue, black);
+    background: radial-gradient(blue, black);
 }
 
 .gray{
-    background: linear-gradient(gray, black);
+    background: radial-gradient(gray, black);
 }
 
 .clickable{
@@ -161,7 +161,8 @@ body{
 }
 
 .selected{
-    border: 1px solid gold;
+    border: 2px solid gold;
+    opacity: 1;
 }
 
 #dead-space{
