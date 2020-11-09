@@ -419,19 +419,19 @@ class Game {
 
     renderPlayerImg(){
         if (this.currentPlayer.team === "red"){
-            this.turnImage.src = "../assets/8.png";
+            this.turnImage.src = "assets/8.png";
             this.turnImageContainer.style.background = "linear-gradient(black, rgba(255, 0, 0, 0.6))";
             this.turn1.style.background = "linear-gradient(rgba(255, 0, 0, 0.3), black)";
         } else if (this.currentPlayer.team === "blue"){
-            this.turnImage.src = "../assets/4.png";
+            this.turnImage.src = "assets/4.png";
             this.turnImageContainer.style.background = "linear-gradient(black, rgba(0, 0, 255, 0.6))";
             this.turn1.style.background = "linear-gradient(rgba(0, 0, 255, 0.3), black";
         } else if (this.currentPlayer.team === "gray"){
-            this.turnImage.src = "../assets/19.png";
+            this.turnImage.src = "assets/19.png";
             this.turnImageContainer.style.background = "linear-gradient(black, rgba(128, 128, 128, 0.6))";
             this.turn1.style.background = "linear-gradient(rgba(128, 128, 128, 0.3), black)";
         } else if (this.currentPlayer.team === "green"){
-            this.turnImage.src = "../assets/15.png";
+            this.turnImage.src = "assets/15.png";
             this.turnImageContainer.style.background = "linear-gradient(black, rgba(0, 128, 0, 0.6))";
             this.turn1.style.background = "linear-gradient(rgba(0, 128, 0, 0.3), black)";
         }
