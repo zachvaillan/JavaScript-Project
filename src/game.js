@@ -61,10 +61,10 @@ class Game {
         } else if(this.initialPlacementPhase === true){
             this.handleInitialPlacementPhase(tile);
         } else if(this.placementPhase === true){
-            console.log("in placement phase")
+            // console.log("in placement phase")
             this.handlePlacementPhase(tile);
         } else if(this.battlePhase === true){
-            console.log("in battle phase")
+            // console.log("in battle phase")
            this.handleBattlePhase(tile);
         } else if (this.fortifyPhase === true){
             this.handleFortifyPhase(tile);
@@ -324,19 +324,19 @@ class Game {
             this.phaseElement.id = "";
             this.phaseElement = document.getElementsByClassName("battle")[0];
             this.phaseElement.id = "rid-opacity";;
-            console.log("battle phase display")
+            // console.log("battle phase display")
         } else if (this.battlePhase === true && this.battleWonFortificationPhase === true){
             this.turn1.innerHTML = "Units: " + this.currentPlayer.allUnits;
             this.phaseElement.id = "";
             this.phaseElement = document.getElementsByClassName("battle-move")[0];
             this.phaseElement.id = "rid-opacity";;
-            console.log("battle move phase display")
+            // console.log("battle move phase display")
         } else if (this.fortifyPhase === true){
             this.turn1.innerHTML = "Units: " + this.currentPlayer.allUnits;
             this.phaseElement.id = "";
             this.phaseElement = document.getElementsByClassName("fortify")[0];
             this.phaseElement.id = "rid-opacity";;
-            console.log("fortify phase display")
+            // console.log("fortify phase display")
         }
     }
 
