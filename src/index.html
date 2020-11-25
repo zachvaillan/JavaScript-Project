@@ -8,9 +8,32 @@
 </head>
 
 <body>
+
+    <div class="instructions-container">
+        <div class="instructions-box">
+            <p class="game-part" class="instruction-el">GAME SETUP</p>
+            <p class="instruction-el">Claim Territory:</p>
+            <p class="instruction-para">Claim wisely, choose stars that may lead you to gaining a unit bonus. Phase ends after all stars are claimed.</p>
+            <p class="instruction-el">Initial Placement:</p>
+            <p class="instruction-para">Each player gets a total of 9 units to place over the course of 3 rounds. Strengthen stars that could lead you to gaining a unit bonus.</p>
+            <p class="game-part" class="instruction-el">GAME BEGINS</p>
+            <p class="instruction-el">Placement Phase:</p>
+            <p class="instruction-para">Place units that you receive from bonuses and territory count before beginning attack.</p>
+            <p class="instruction-el">Battle Phase:</p>
+            <p class="instruction-para">You may attack enemy stars adjacent to stars you control that have one or more units.</p>
+            <p class="instruction-el">Battle Movement Phase:</p>
+            <p class="instruction-para"></p>
+            <p class="instruction-el">Fortification Phase:</p>
+        </div>
+    </div>
+
     <div class="window">
+
+        <!-- <div class="instructions-container"></div> -->
+        
+
         <div class="current-phase">
-            <h2 class="btn-help">Instructions</h2>
+            <h2 class="btn-help" id="show-instructions">Instructions</h2>
             <h2 class="btn-help" id="show-bonuses">Show Bonuses</h2>
             <div class="divider"></div>
             <h2 class="claim">Claim Territory</h2>
@@ -27,10 +50,11 @@
             <p class="the-belt-units">The Belt: 4 Units (bottom)</p>
             <p class="hide-away-units">Hideaway: 3 Units (top right)</p>
         </div>
-        <div id="game-window">
-            
-        </div>
+
+        <div id="game-window"></div>
+
     </div>
+
     <script type="application/javascript" src="../dist/main.js"></script>
 </body>
 

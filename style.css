@@ -375,3 +375,50 @@ body{
 .hidden{
     visibility: hidden;
 }
+
+.instructions-container{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.window{
+    opacity: .5;
+}
+
+.instructions-box{
+    position: absolute;
+    z-index: 3;
+    background-color: rgba(253, 235, 69, 0.698);
+    width: 400px;
+    margin-top: 20px;
+    padding: 50px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    border-radius: 15px;
+}
+
+.instruction-el {
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+    text-decoration: underline;
+}
+
+.instruction-para {
+    width: 100%;
+    text-align: center;
+    padding: 5px;
+}
+
+.game-part{
+    padding-top: 25px;
+    font-size: 26;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.phase-instructions{
+    text-decoration: none;
+}

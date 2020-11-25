@@ -17,7 +17,9 @@ class Game {
         this.turn4 = document.createElement('div');
         this.btnContainer = document.createElement("div");
         this.btnContainer.classList.add("end-turn-btn-container");
+
         this.showBonuses = document.getElementById("show-bonuses");
+        this.showInstructions = document.getElementById("show-instructions");
         this.button = null;
 
         this.players = players;
@@ -557,6 +559,10 @@ class Game {
             this.bonusesRevealed = false;
             this.showBonuses.innerHTML = "Show Bonuses";
         }
+    }
+
+    initiateInstructionsModal(){
+        this.showInstructions.addEventListener("click", () => this.revealInstructions());
     }
 
 }
