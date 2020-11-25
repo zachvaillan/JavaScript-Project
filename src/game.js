@@ -17,6 +17,7 @@ class Game {
         this.turn4 = document.createElement('div');
         this.btnContainer = document.createElement("div");
         this.btnContainer.classList.add("end-turn-btn-container");
+        this.showBonuses = document.getElementById("show-bonuses");
         this.button = null;
 
         this.players = players;
@@ -30,6 +31,7 @@ class Game {
 
         this.currentMoveable = [];
 
+        this.bonusesRevealed = false;
         this.claimTerritoryPhase = true; // for beginning of game, once off does not come back
         this.initialPlacementPhase = false; // for beginning of game, once turned on then off does not come back
         this.placementPhase = false;
@@ -371,6 +373,7 @@ class Game {
 
     createMap(){
         this.gameWindowElement.appendChild(this.addMapInfoContainer());
+        this.initiateShowBonuses();
         // let battleGrounds = document.getElementsByClassName("battle-grounds");
         // Array.from(battleGrounds).forEach(el => el.style.backgroundColor = "pink");
     }
@@ -397,12 +400,23 @@ class Game {
 
         infoContainer.appendChild(this.createTitle());
 
-        let github = document.createElement("div");
+        let github = document.createElement("a");
         github.classList.add("github");
-        github.innerHTML = "Github";
-        let linkedIn = document.createElement("div");
+        github.href = "https://github.com/zachvaillan";
+        github.target = "_blank";
+        let githubLogo = document.createElement("img");
+        githubLogo.src = "../assets/GitHub_Logo_White.png";
+        githubLogo.classList.add("github-logo");
+        github.appendChild(githubLogo);
+
+        let linkedIn = document.createElement("a");
         linkedIn.classList.add("linked-in");
-        linkedIn.innerHTML = "LinkedIn";
+        linkedIn.href = "https://www.linkedin.com/in/zachary-vaillancourt-0b0342112/";
+        linkedIn.target = "_blank";
+        let linkedInLogo = document.createElement("img");
+        linkedInLogo.src = "../assets/LI-Logo.png"
+        linkedInLogo.classList.add("linked-in-logo");
+        linkedIn.appendChild(linkedInLogo);
 
         let linksContainer = document.createElement("div");
         linksContainer.classList.add("links-container");
@@ -419,19 +433,19 @@ class Game {
 
     renderPlayerImg(){
         if (this.currentPlayer.team === "red"){
-            this.turnImage.src = "assets/8.png";
+            this.turnImage.src = "../assets/8.png"; // for github pages use "assets/8.png"
             this.turnImageContainer.style.background = "linear-gradient(black, rgba(255, 0, 0, 0.6))";
             this.turn1.style.background = "linear-gradient(rgba(255, 0, 0, 0.3), black)";
         } else if (this.currentPlayer.team === "blue"){
-            this.turnImage.src = "assets/4.png";
+            this.turnImage.src = "../assets/4.png";
             this.turnImageContainer.style.background = "linear-gradient(black, rgba(0, 0, 255, 0.6))";
             this.turn1.style.background = "linear-gradient(rgba(0, 0, 255, 0.3), black";
         } else if (this.currentPlayer.team === "gray"){
-            this.turnImage.src = "assets/19.png";
+            this.turnImage.src = "../assets/19.png";
             this.turnImageContainer.style.background = "linear-gradient(black, rgba(128, 128, 128, 0.6))";
             this.turn1.style.background = "linear-gradient(rgba(128, 128, 128, 0.3), black)";
         } else if (this.currentPlayer.team === "green"){
-            this.turnImage.src = "assets/15.png";
+            this.turnImage.src = "../assets/15.png";
             this.turnImageContainer.style.background = "linear-gradient(black, rgba(0, 128, 0, 0.6))";
             this.turn1.style.background = "linear-gradient(rgba(0, 128, 0, 0.3), black)";
         }
@@ -512,6 +526,37 @@ class Game {
             titleContainer.appendChild(titleChar);
         });
         return titleContainer;
+    }
+
+    initiateShowBonuses(){
+        this.showBonuses.addEventListener("click", () => this.revealBonuses());
+    }
+
+    revealBonuses(){
+        let battleGrounds = document.getElementsByClassName("battle-grounds");
+        let hideAway = document.getElementsByClassName("hide-away");
+        let theBelt = document.getElementsByClassName("the-belt");
+        let bridge = document.getElementsByClassName("bridge");
+        let unitBonuses = document.getElementById("unit-bonuses");
+
+        if (this.bonusesRevealed === false){
+            Array.from(battleGrounds).forEach(el => el.style.backgroundColor = "pink");
+            Array.from(hideAway).forEach(el => el.style.backgroundColor = "yellow");
+            Array.from(theBelt).forEach(el => el.style.backgroundColor = "white");
+            Array.from(bridge).forEach(el => el.style.backgroundColor = "orange");
+            this.bonusesRevealed = true;
+            unitBonuses.classList.remove("hidden");
+            this.showBonuses.innerHTML = "Hide Bonuses";
+            
+        } else {
+            Array.from(battleGrounds).forEach(el => el.style.backgroundColor = "transparent");
+            Array.from(hideAway).forEach(el => el.style.backgroundColor = "transparent");
+            Array.from(theBelt).forEach(el => el.style.backgroundColor = "transparent");
+            Array.from(bridge).forEach(el => el.style.backgroundColor = "transparent");
+            unitBonuses.classList.add("hidden");
+            this.bonusesRevealed = false;
+            this.showBonuses.innerHTML = "Show Bonuses";
+        }
     }
 
 }

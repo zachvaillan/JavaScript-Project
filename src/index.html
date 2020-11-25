@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="../style.css">
     <title>Document</title>
 </head>
 
@@ -11,7 +11,7 @@
     <div class="window">
         <div class="current-phase">
             <h2 class="btn-help">Instructions</h2>
-            <h2 class="btn-help">Show Bonuses</h2>
+            <h2 class="btn-help" id="show-bonuses">Show Bonuses</h2>
             <div class="divider"></div>
             <h2 class="claim">Claim Territory</h2>
             <h2 class="initial-place">Initial Placement</h2>
@@ -21,11 +21,17 @@
             <h2 class="battle-move">Battle Movement Phase</h2>
             <h2 class="fortify">Fortification Phase</h2>
         </div>
+        <div class="hidden" id="unit-bonuses">
+            <p class="battle-grounds-units">Battle Grounds: 6 Units (left)</p>
+            <p class="bridge-units">The Bridge: 2 Units (middle)</p>
+            <p class="the-belt-units">The Belt: 4 Units (bottom)</p>
+            <p class="hide-away-units">Hideaway: 3 Units (top right)</p>
+        </div>
         <div id="game-window">
             
         </div>
     </div>
-    <script type="application/javascript" src="./dist/main.js"></script>
+    <script type="application/javascript" src="../dist/main.js"></script>
 </body>
 
 </html>

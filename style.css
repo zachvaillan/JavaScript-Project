@@ -242,9 +242,19 @@ body{
     opacity: .6;
 }
 
+.github-logo{
+    width: 50px;
+}
+
 .linked-in{
     margin: auto;
     opacity: .6;
+}
+
+.linked-in-logo{
+    width: 60px;
+    background-color: white;
+    padding: 5px;
 }
 
 .title-container{
@@ -333,4 +343,35 @@ body{
 .name{
     margin: auto;
     opacity: .6;
+}
+
+#unit-bonuses{
+    display: flex;
+    flex-wrap: wrap;
+    padding-left: 50px;
+    margin-bottom: 15px;
+}
+
+.battle-grounds-units{
+    color: pink;
+    margin-right: 20px;
+}
+
+.the-belt-units{
+    color: white;
+    margin-right: 20px;
+}
+
+.bridge-units{
+    color: orange;
+    margin-right: 20px;
+}
+
+.hide-away-units{
+    color: yellow;
+    margin-right: 20px;
+}
+
+.hidden{
+    visibility: hidden;
 }
