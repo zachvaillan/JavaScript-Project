@@ -380,14 +380,16 @@ body{
     width: 100%;
     display: flex;
     justify-content: center;
+    display: none;
 }
 
-.window{
+/* .window{
     opacity: .5;
-}
+} */
 
 .instructions-box{
     position: absolute;
+    /* display: none; */
     z-index: 3;
     background-color: rgba(253, 235, 69, 0.698);
     width: 400px;
@@ -414,9 +416,20 @@ body{
 
 .game-part{
     padding-top: 25px;
-    font-size: 26;
+    font-size: 26px;
     font-weight: 700;
     text-decoration: none;
+}
+
+#close-instructions{
+    width: 100%;
+}
+
+#close-x{
+    cursor: pointer;
+    font-weight: 700;
+    font-size: 42px;
+    width: 42px;
 }
 
 .phase-instructions{

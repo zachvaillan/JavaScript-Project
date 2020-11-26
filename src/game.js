@@ -34,6 +34,7 @@ class Game {
         this.currentMoveable = [];
 
         this.bonusesRevealed = false;
+        this.instructionsRevealed = false;
         this.claimTerritoryPhase = true; // for beginning of game, once off does not come back
         this.initialPlacementPhase = false; // for beginning of game, once turned on then off does not come back
         this.placementPhase = false;
@@ -376,6 +377,7 @@ class Game {
     createMap(){
         this.gameWindowElement.appendChild(this.addMapInfoContainer());
         this.initiateShowBonuses();
+        this.initiateInstructionsModal();
         // let battleGrounds = document.getElementsByClassName("battle-grounds");
         // Array.from(battleGrounds).forEach(el => el.style.backgroundColor = "pink");
     }
@@ -562,7 +564,29 @@ class Game {
     }
 
     initiateInstructionsModal(){
+        let x = document.getElementById("close-x");
         this.showInstructions.addEventListener("click", () => this.revealInstructions());
+        x.addEventListener("click", () => this.closeInstructions());
+
+    }
+
+    revealInstructions(){
+        let windowElement = document.getElementsByClassName("window")[0];
+        let instructionsElement = document.getElementById("instructions-box");
+        let instructionsContainer = document.getElementsByClassName("instructions-container")[0];
+        windowElement.style.opacity = "0.5";
+        instructionsElement.style.display = "flex";
+        instructionsContainer.style.display = "flex";
+        // this.instructionsRevealed = true;
+    }
+
+    closeInstructions(){
+        let windowElement = document.getElementsByClassName("window")[0];
+        let instructionsElement = document.getElementById("instructions-box");
+        let instructionsContainer = document.getElementsByClassName("instructions-container")[0];
+        windowElement.style.opacity = "1";
+        instructionsElement.style.display = "none";
+        instructionsContainer.style.display = "none";
     }
 
 }
