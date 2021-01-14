@@ -3,15 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="../style.css">
     <title>Document</title>
 </head>
 
 <body>
+
+    <div class="instructions-container">
+        <div class="instructions-box" id="instructions-box">
+            <div id="close-instructions"><p id="close-x">X</p></div>
+            <p class="instruction-para">A Risk-like game set in space. First, players claim territories, then over the course of 3 rounds place 3 units per round. 
+                Next, the normal game begins. Players may attack adjacent stars by clicking their star then an enemy star. There are 4 zones that have bonuses for controlling all stars in the zone. 
+                At the beginning of every turn players may place 2 units for every 3 stars that they control, and bonus units for controlling the bonus zones. The game is won by controlling the entire map.</p>
+            <p class="game-part" class="instruction-el">GAME SETUP</p>
+            <p class="instruction-el">Claim Territory:</p>
+            <p class="instruction-para">Claim wisely, choose stars that may lead you to gaining a unit bonus. Phase ends after all stars are claimed.</p>
+            <p class="instruction-el">Initial Placement:</p>
+            <p class="instruction-para">Each player gets a total of 9 units to place over the course of 3 rounds. Strengthen stars that could lead you to gaining a unit bonus.</p>
+            <p class="game-part" class="instruction-el">GAME BEGINS</p>
+            <p class="instruction-el">Placement Phase:</p>
+            <p class="instruction-para">Place units that you receive from bonuses and territory count before beginning attack.</p>
+            <p class="instruction-el">Battle Phase:</p>
+            <p class="instruction-para">You may attack enemy stars adjacent to stars you control that have one or more units. To attack, select your star, then click the star you would like to attack.</p>
+            <p class="instruction-el">Battle Movement Phase:</p>
+            <p class="instruction-para">If you are victorious in your attack, you may choose how many units to bring over to the newly won star. Once you are finished moving your troops, click the End Battle Movement button.</p>
+            <p class="instruction-el">Fortification Phase:</p>
+            <p class="instruction-para">After ending your attack phase, you have the option to move troops through adjacently owned stars. Fortify strategic borders.</p>
+        </div>
+    </div>
+
     <div class="window">
+
+        <!-- <div class="instructions-container"></div> -->
+        
+
         <div class="current-phase">
-            <h2 class="btn-help">Instructions</h2>
-            <h2 class="btn-help">Show Bonuses</h2>
+            <h2 class="btn-help" id="show-instructions">Instructions</h2>
+            <h2 class="btn-help" id="show-bonuses">Show Bonuses</h2>
             <div class="divider"></div>
             <h2 class="claim">Claim Territory</h2>
             <h2 class="initial-place">Initial Placement</h2>
@@ -21,11 +49,18 @@
             <h2 class="battle-move">Battle Movement Phase</h2>
             <h2 class="fortify">Fortification Phase</h2>
         </div>
-        <div id="game-window">
-            
+        <div class="hidden" id="unit-bonuses">
+            <p class="battle-grounds-units">Battle Grounds: 6 Units (left)</p>
+            <p class="bridge-units">The Bridge: 2 Units (middle)</p>
+            <p class="the-belt-units">The Belt: 4 Units (bottom)</p>
+            <p class="hide-away-units">Hideaway: 3 Units (top right)</p>
         </div>
+
+        <div id="game-window"></div>
+
     </div>
-    <script type="application/javascript" src="./dist/main.js"></script>
+
+    <script type="application/javascript" src="../dist/main.js"></script>
 </body>
 
 </html>
