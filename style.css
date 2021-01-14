@@ -61,7 +61,12 @@ body{
 
 #game-window{
     display: flex;
-    justify-content: space-evenly;
+    width: 100vw;
+}
+
+.map-info-container{
+    width: 70%;
+    overflow: auto;
 }
 
 #current-player{
@@ -84,15 +89,12 @@ body{
     margin: auto;
 }
 
-.map{
-   padding-right: 40px;
-}
-
 .sidebar{
     border-right: 2px solid rgba(253, 235, 69, 0.698);
     border-left: 2px solid rgba(253, 235, 69, 0.698);
     /* border-radius: 10px; */
     max-height: 100%;
+    width: 30%;
 }
 
 .row{
@@ -154,6 +156,8 @@ body{
     font-weight: 700;
     color: rgba(253, 235, 69, 0.698);
     border: none;
+    cursor: pointer;
+    width: 100%;
 }   
 
 .end-turn-btn:focus{
