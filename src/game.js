@@ -409,7 +409,7 @@ class Game {
         github.href = "https://github.com/zachvaillan";
         github.target = "_blank";
         let githubLogo = document.createElement("img");
-        githubLogo.src = "../assets/GitHub_Logo_White.png";
+        githubLogo.src = "assets/GitHub_Logo_White.png";
         githubLogo.classList.add("github-logo");
         github.appendChild(githubLogo);
 
@@ -418,7 +418,7 @@ class Game {
         linkedIn.href = "https://www.linkedin.com/in/zachary-vaillancourt-0b0342112/";
         linkedIn.target = "_blank";
         let linkedInLogo = document.createElement("img");
-        linkedInLogo.src = "../assets/LI-Logo.png"
+        linkedInLogo.src = "assets/LI-Logo.png"
         linkedInLogo.classList.add("linked-in-logo");
         linkedIn.appendChild(linkedInLogo);
 
@@ -437,19 +437,19 @@ class Game {
 
     renderPlayerImg(){
         if (this.currentPlayer.team === "red"){
-            this.turnImage.src = "../assets/8.png"; // for github pages use "assets/8.png"
+            this.turnImage.src = "assets/8.png"; // for github pages use "assets/8.png" for localhost use "../assets/8.png"
             this.turnImageContainer.style.background = "linear-gradient(black, rgba(255, 0, 0, 0.6))";
             this.turn1.style.background = "linear-gradient(rgba(255, 0, 0, 0.3), black)";
         } else if (this.currentPlayer.team === "blue"){
-            this.turnImage.src = "../assets/4.png";
+            this.turnImage.src = "assets/4.png";
             this.turnImageContainer.style.background = "linear-gradient(black, rgba(0, 0, 255, 0.6))";
             this.turn1.style.background = "linear-gradient(rgba(0, 0, 255, 0.3), black";
         } else if (this.currentPlayer.team === "gray"){
-            this.turnImage.src = "../assets/19.png";
+            this.turnImage.src = "assets/19.png";
             this.turnImageContainer.style.background = "linear-gradient(black, rgba(128, 128, 128, 0.6))";
             this.turn1.style.background = "linear-gradient(rgba(128, 128, 128, 0.3), black)";
         } else if (this.currentPlayer.team === "green"){
-            this.turnImage.src = "../assets/15.png";
+            this.turnImage.src = "assets/15.png";
             this.turnImageContainer.style.background = "linear-gradient(black, rgba(0, 128, 0, 0.6))";
             this.turn1.style.background = "linear-gradient(rgba(0, 128, 0, 0.3), black)";
         }
