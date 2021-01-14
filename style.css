@@ -61,7 +61,11 @@ body{
 
 #game-window{
     display: flex;
-    justify-content: space-evenly;
+    width: 100vw;
+}
+
+.map-info-container{
+    width: 70%;
 }
 
 #current-player{
@@ -82,10 +86,6 @@ body{
 .current-phase > h2{
     opacity: .7;
     margin: auto;
-}
-
-.map{
-   padding-right: 40px;
 }
 
 .sidebar{
