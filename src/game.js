@@ -415,7 +415,7 @@ class Game {
 
         let linkedIn = document.createElement("a");
         linkedIn.classList.add("linked-in");
-        linkedIn.href = "https://www.linkedin.com/in/zachary-vaillancourt-0b0342112/";
+        linkedIn.href = "https://www.linkedin.com/in/zach-s-vaillancourt-0b0342112/";
         linkedIn.target = "_blank";
         let linkedInLogo = document.createElement("img");
         linkedInLogo.src = "assets/LI-Logo.png"
